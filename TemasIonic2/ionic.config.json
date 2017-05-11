@@ -1,7 +1,6 @@
 {
-  "name": "ionic2-app-base",
+  "name": "temasIonic2",
   "app_id": "",
-  "typescript": true,
   "v2": true,
-  "type": "ionic-angular"
+  "typescript": true
 }
