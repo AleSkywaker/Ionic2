@@ -18,7 +18,16 @@ export class Contacto {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad Contacto');
+    console.log(this.navParams);
+    console.log(this.navParams.get('tipo'));
+
+
+    this.navParams.data.mensaje();
+    console.log(this.navParams.data.anio);
+    console.log(this.navParams.data.tipo);
+    
+    this.navParams.data['mensaje']();
+    
   }
 
   pushPage(){
