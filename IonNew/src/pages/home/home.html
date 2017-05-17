@@ -1,0 +1,57 @@
+<ion-navbar>
+<button [hidden]="!haConfirmadoPedido"  (click)="cancelarPedido()"  ion-button menuToggle right>
+  <ion-icon  name="arrow-back"></ion-icon>¿Cancelar?
+</button>
+
+
+
+
+  <ion-title>
+    <span [hidden]="haConfirmadoPedido" >Retiro</span>
+    <span [hidden]="!haConfirmadoPedido">Esta llegando.....</span>   
+  </ion-title>
+
+
+
+
+</ion-navbar>
+
+
+
+
+<ion-content class="home">
+  <div class="map-wrapper">
+    
+    <mapa #mapi [haConfirmadoPedido]="haConfirmadoPedido"></mapa>
+  </div>
+
+  <div class="boton request">
+    <ion-row>
+      <ion-col width-50>
+        <button ion-button block color="light"><ion-icon name='cars'></ion-icon>VISA **34</button>
+      </ion-col>
+      <ion-col width-50>
+        <button ion-button block color="light"><ion-icon name='cash'></ion-icon>Cash</button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <button [hidden]="haConfirmadoPedido" ion-button block color="grisOscuro" (click)="confirmarPedido()">Busca Servicio</button>
+        <button [hidden]="!haConfirmadoPedido" ion-button block color="grisOscuro" (click)="cancelarPedido()">Cancelar Servicio</button>
+      
+        <button ion-button block color="light">LLEGARÁ EN MENOS DE 5 MINUTOS</button>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <div class="bb" (click)="mapi.centrarLocation()">
+    <ion-buttons icon-only  menuToggle right >
+  <ion-icon  name="navigate" ></ion-icon>
+</ion-buttons>
+  </div>
+
+
+
+
+</ion-content>
